@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--
+LOGAN BRANDS REASONING LOG
+Athlete: Roman Gagliano | QB | MTSU
+Palette: Storm (#1a1f2e / #d1d9e6 / #f59e0b) — chosen for the intensity and depth of a QB's leadership identity; dark navy base evokes the late-night film room, gold accent matches the competitive fire of a signal-caller building his name.
+Font Pair: Oswald + DM Sans — Oswald commands authority for display text (fitting a QB who commands the huddle), DM Sans keeps body copy clean and readable.
+Stats: Excluded per Stats Decision (position/data mismatch). Narrative angle used in hero.
+Sections: Hero, Bio (minimal leadership narrative), NIL Contact Form, Footer.
+No stats section rendered.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roman Gagliano | Quarterback | MTSU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1a1f2e;
+    --text: #d1d9e6;
+    --accent: #f59e0b;
+    --bg-alt: #222840;
+    --bg-card: #1e2437;
+    --text-muted: #8a95b0;
+    --border: rgba(209,217,230,0.12);
+    --font-display: 'Oswald', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw; height: 64px;
+    background: rgba(26,31,46,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: var(--font-body); font-size: 0.88rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--bg); padding: 1.5rem 5vw 2rem; border-bottom: 1px solid var(--border); z-index: 99; }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+  .mobile-menu a { font-family: var(--font-body); font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 80px 5vw 4rem;
+    background: linear-gradient(160deg, var(--bg) 0%, var(--bg-alt) 60%, rgba(245,158,11,0.06) 100%);
+    position: relative;
+  }
+  .hero-position {
+    font-family: var(--font-body); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+  .hero-name {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(3.8rem, 13vw, 10.5rem);
+    line-height: 0.92; letter-spacing: 0.01em; text-transform: uppercase;
+    color: var(--text); margin-bottom: 1.5rem;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-statement {
+    font-family: var(--font-body); font-size: clamp(1rem, 2.2vw, 1.25rem);
+    font-weight: 300; color: var(--text-muted); max-width: 600px;
+    margin: 0 auto 2.5rem; line-height: 1.7;
+  }
+  .hero-cta {
+    display: inline-block; padding: 0.85rem 2.4rem;
+    background: var(--accent); color: var(--bg);
+    font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .hero-cta:hover { opacity: 0.88; transform: translateY(-2px); }
+  .hero-school {
+    margin-top: 3.5rem; font-family: var(--font-body); font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .hero-divider { width: 40px; height: 2px; background: var(--accent); margin: 1rem auto 0; }
+
+  /* SECTION BASE */
+  section { padding: 6rem 5vw; }
+  .section-label {
+    font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700; text-transform: uppercase; color: var(--text); line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  /* IDENTITY */
+  #identity { background: var(--bg-alt); }
+  .identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; max-width: 1100px; margin: 0 auto; }
+  .identity-text p { font-size: 1.05rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 1.2rem; }
+  .identity-pillars { display: flex; flex-direction: column; gap: 1.5rem; }
+  .pillar { border-left: 3px solid var(--accent); padding-left: 1.25rem; }
+  .pillar-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+  .pillar-desc { font-size: 0.9rem; color: var(--text-muted); }
+
+  /* NIL / CONTACT */
+  #nil { background: var(--bg); }
+  .nil-wrap { max-width: 700px; margin: 0 auto; }
+  .nil-intro { font-size: 1rem; color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.8; }
+  form { display: flex; flex-direction: column; gap: 1.1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  input, textarea, select {
+    background: var(--bg-card); border: 1px solid var(--border);
+    color: var(--text); font-family: var(--font-body); font-size: 0.95rem;
+    padding: 0.85rem 1.1rem; width: 100%; outline: none;
+    transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 130px; }
+  select option { background: var(--bg); }
+  .submit-btn {
+    align-self: flex-start; padding: 0.9rem 2.6rem;
+    background: var(--accent); color: var(--bg);
+    font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .submit-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg-alt); border-top: 1px solid var(--border);
+    padding: 2.5rem 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .footer-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-built { font-size: 0.78rem; color: var(--text-muted); }
+  .footer-built a { color: var(--accent); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .identity-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .submit-btn { align-self: stretch; text-align: center; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">RG</a>
+  <ul class="nav-links">
+    <li><a href="#identity">Story</a></li>
+    <li><a href="#nil">Work With Me</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#identity" onclick="toggleMenu()">Story</a></li>
+    <li><a href="#nil" onclick="toggleMenu()">Work With Me</a></li>
+  </ul>
+</div>
+
+<section id="hero">
+  <div class="hero-position">Quarterback &nbsp;·&nbsp; MTSU</div>
+  <h1 class="hero-name">Roman<br><span>Gagliano</span></h1>
+  <p class="hero-statement">Every championship begins with a signal-caller who earns his team's trust on every single rep. Roman Gagliano is building that story — play by play, season by season — at Middle Tennessee State.</p>
+  <a href="#nil" class="hero-cta">Connect With Roman</a>
+  <div class="hero-school">Middle Tennessee State University</div>
+  <div class="hero-divider"></div>
+</section>
+
+<section id="identity">
+  <div class="identity-grid">
+    <div class="identity-text">
+      <div class="section-label">The Quarterback</div>
+      <h2 class="section-title">Command<br>The Room</h2>
+      <p>The quarterback position demands more than arm talent — it demands presence, preparation, and the ability to raise the level of everyone around you. Roman Gagliano embodies that standard at MTSU.</p>
+      <p>Competing at the college level means earning every snap, studying every opponent, and showing up when the margin is thinnest. That competitive mentality shapes everything Roman does on and off the field.</p>
+    </div>
+    <div class="identity-pillars">
+      <div class="pillar">
+        <div class="pillar-title">Leadership</div>
+        <div class="pillar-desc">The huddle reflects the quarterback. Roman leads through preparation and accountability — setting the standard every practice rep.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Competitive Drive</div>
+        <div class="pillar-desc">Playing QB at the college level requires an unrelenting drive to improve. Every film session, every throw, every decision is an opportunity to get better.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Brand Alignment</div>
+        <div class="pillar-desc">Roman brings authenticity and discipline to every partnership — the same qualities that define his approach inside the facility.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nil">
+  <div class="nil-wrap">
+    <div class="section-label">NIL Partnerships</div>
+    <h2 class="section-title">Work With<br>Roman</h2>
+    <p class="nil-intro">Roman is open to brand partnerships, appearances, and content collaborations that align with his identity as a competitor and leader. Reach out below to start the conversation.</p>
+    <form name="nil-contact" netlify netlify-honeypot="bot-field" action="#nil">
+      <input type="hidden" name="form-name" value="nil-contact">
+      <input type="text" name="bot-field" style="display:none" aria-hidden="true">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="company" placeholder="Brand / Company">
+      </div>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <select name="opportunity">
+        <option value="" disabled selected>Type of Opportunity</option>
+        <option value="social">Social Media Content</option>
+        <option value="appearance">Appearance / Event</option>
+        <option value="ambassador">Brand Ambassador</option>
+        <option value="local">Local Business Partnership</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="message" placeholder="Tell Roman about the opportunity…"></textarea>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Roman Gagliano</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/RomanGagliano_" target="_blank" rel="noopener">@RomanGagliano_</a>
+  </div>
+  <div class="footer-built">Built by <a href="https://loganbrands.com" target="_blank" rel="noopener">Logan Brands</a></div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
