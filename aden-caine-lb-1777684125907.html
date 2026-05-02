@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- REASONING:
+Athlete: Aden Caine | Sport: Football | Position: Punter | School: M
+Aesthetic decision: Punter = specialist, precision, calculated power. "M" school suggests Michigan or similar — strong football tradition. No bio or Instagram color cues provided. Choosing a dark, authoritative palette that conveys field-position dominance and specialist reliability. Storm palette (#1a1f2e/#d1d9e6/#f59e0b) fits well — deep navy base, amber accent conveys precision and game-changing energy. Recent palettes list is empty, so no avoidance needed.
+Font pair: Oswald+DM Sans — strong, athletic, modern. Oswald for headlines, DM Sans for body copy.
+Stats: include_stats = false. Using narrative_angle: specialist, field-position weapon, reliability, competitive drive.
+Sections: Hero, NIL/Contact form, Footer. No bio or highlights data exists.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aden Caine | Punter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1a1f2e;
+  --text: #d1d9e6;
+  --accent: #f59e0b;
+  --font-head: 'Oswald', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --bg-card: rgba(255,255,255,0.04);
+  --border: rgba(209,217,230,0.12);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,31,46,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--font-head); font-size: 1.2rem; letter-spacing: 0.1em; color: var(--accent); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 24px; height: 2px; background: var(--text); display: block; transition: all 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(26,31,46,0.98); padding: 2rem; z-index: 99; border-bottom: 1px solid var(--border); }
+.mobile-menu.open { display: block; }
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
+.mobile-menu a { color: var(--text); text-decoration: none; font-family: var(--font-head); font-size: 1.4rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.mobile-menu a:hover { color: var(--accent); }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center top, rgba(245,158,11,0.08) 0%, transparent 65%); pointer-events: none; }
+.hero-tag { font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.hero-name { font-family: var(--font-head); font-size: clamp(4.5rem, 14vw, 11rem); font-weight: 700; line-height: 0.9; letter-spacing: 0.02em; text-transform: uppercase; color: var(--text); margin-bottom: 1.2rem; }
+.hero-name span { color: var(--accent); }
+.hero-position { font-family: var(--font-head); font-size: clamp(1rem, 3vw, 1.6rem); letter-spacing: 0.3em; text-transform: uppercase; color: rgba(209,217,230,0.5); margin-bottom: 2rem; }
+.hero-statement { max-width: 560px; font-size: clamp(1rem, 2vw, 1.15rem); color: rgba(209,217,230,0.75); font-weight: 300; line-height: 1.75; margin-bottom: 3rem; }
+.hero-cta { display: inline-block; background: var(--accent); color: #1a1f2e; font-family: var(--font-head); font-size: 0.95rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 1rem 2.4rem; text-decoration: none; transition: opacity 0.2s, transform 0.2s; }
+.hero-cta:hover { opacity: 0.88; transform: translateY(-2px); }
+.hero-divider { position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--border); }
+
+/* SECTION SHARED */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 900px; margin: 0 auto; }
+.section-label { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+.section-title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; text-transform: uppercase; line-height: 1; margin-bottom: 2rem; }
+.divider-line { width: 48px; height: 3px; background: var(--accent); margin-bottom: 2.5rem; }
+
+/* NIL / CONTACT */
+.nil-section { background: rgba(255,255,255,0.02); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.nil-intro { font-size: 1.05rem; color: rgba(209,217,230,0.75); max-width: 600px; margin-bottom: 3rem; font-weight: 300; line-height: 1.8; }
+form { display: grid; gap: 1.2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+input, textarea, select { width: 100%; background: var(--bg-card); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 0.95rem; padding: 0.9rem 1.1rem; outline: none; transition: border-color 0.2s; }
+input::placeholder, textarea::placeholder { color: rgba(209,217,230,0.35); }
+input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+select option { background: #1a1f2e; }
+textarea { resize: vertical; min-height: 130px; }
+.form-submit { background: var(--accent); color: #1a1f2e; font-family: var(--font-head); font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; border: none; padding: 1.1rem 2.5rem; cursor: pointer; width: fit-content; transition: opacity 0.2s, transform 0.2s; }
+.form-submit:hover { opacity: 0.88; transform: translateY(-2px); }
+
+/* FOOTER */
+footer { padding: 3rem 2rem; border-top: 1px solid var(--border); }
+.footer-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-name { font-family: var(--font-head); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.footer-links { display: flex; gap: 1.5rem; align-items: center; }
+.footer-links a { color: rgba(209,217,230,0.5); font-size: 0.82rem; text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent); }
+.footer-built { font-size: 0.78rem; color: rgba(209,217,230,0.3); }
+.footer-built a { color: rgba(209,217,230,0.45); text-decoration: none; transition: color 0.2s; }
+.footer-built a:hover { color: var(--accent); }
+
+/* RESPONSIVE */
+@media (max-width: 680px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-name { font-size: clamp(3.5rem, 18vw, 5.5rem); }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Aden Caine</a>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#nil">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#hero" onclick="closeMobile()">Home</a></li>
+    <li><a href="#nil" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<section class="hero" id="hero">
+  <p class="hero-tag">Football &bull; Specialist</p>
+  <h1 class="hero-name">Aden<br><span>Caine</span></h1>
+  <p class="hero-position">Punter</p>
+  <p class="hero-statement">Field position is the game within the game. As a specialist, Aden Caine controls the invisible margin — flipping fields, pinning opponents deep, and delivering when the moment demands precision over everything.</p>
+  <a href="#nil" class="hero-cta">Work With Me</a>
+  <div class="hero-divider"></div>
+</section>
+
+<section class="nil-section" id="nil">
+  <div class="section-inner">
+    <p class="section-label">NIL &amp; Partnerships</p>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="divider-line"></div>
+    <p class="nil-intro">Interested in partnering with Aden? Whether it's brand collaboration, appearances, or NIL opportunities — reach out below and let's build something.</p>
+    <form name="nil-contact" netlify>
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      <input type="text" name="company" placeholder="Brand / Company (optional)">
+      <select name="interest">
+        <option value="" disabled selected>Type of Opportunity</option>
+        <option value="brand-deal">Brand Deal</option>
+        <option value="appearance">Appearance / Event</option>
+        <option value="social">Social Media Collaboration</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="message" placeholder="Tell me about your opportunity..."></textarea>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Aden Caine</span>
+    <div class="footer-links">
+      <span class="footer-built">Built by <a href="https://loganbrands.com" target="_blank" rel="noopener">Logan Brands</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+}
+</script>
+</body>
+</html>
