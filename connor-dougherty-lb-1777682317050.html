@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--
+REASONING:
+Athlete: Connor Dougherty — linebacker at MTSU, pass-rush specialist with 3 sacks, 7 TFL, 34 tackles.
+Position listed as "Lo" — interpreted as linebacker (LB).
+Aesthetic: Defensive energy, raw disruption, blue-collar football. Storm palette fits the edge — dark navy base, cool steel highlight, amber accent punches through like a blitz. Oswald+DM Sans gives athletic weight with clean readability.
+Stats: include_stats = true — 3 sacks, 7 TFL, 34 tackles displayed.
+Sections: Hero, Stats, NIL/Contact, Footer. No bio section (no bio provided). No highlights section (no data).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connor Dougherty | Linebacker | MTSU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1a1f2e;
+  --text: #d1d9e6;
+  --accent: #f59e0b;
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --nav-h: 60px;
+  --max: 1100px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h);
+  background: rgba(26,31,46,0.95); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; z-index: 100; border-bottom: 1px solid rgba(245,158,11,0.2);
+}
+.nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--accent); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--text); transition: all 0.3s; }
+.mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--bg); padding: 2rem 5%; z-index: 99; border-bottom: 1px solid rgba(245,158,11,0.2); }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; color: var(--text); text-decoration: none; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 0; border-bottom: 1px solid rgba(209,217,230,0.1); transition: color 0.2s; }
+.mobile-menu a:hover { color: var(--accent); }
+
+/* HERO */
+#hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  padding: calc(var(--nav-h) + 4rem) 5% 4rem;
+  position: relative; overflow: hidden;
+}
+.hero-tag {
+  font-family: var(--font-display); font-size: 0.85rem; font-weight: 500;
+  letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.hero-name {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(4rem, 14vw, 10rem); line-height: 0.9;
+  text-transform: uppercase; letter-spacing: -0.01em;
+  color: var(--text); margin-bottom: 1.5rem;
+}
+.hero-name span { color: var(--accent); display: block; }
+.hero-statement {
+  font-family: var(--font-body); font-weight: 300; font-size: clamp(1rem, 2.5vw, 1.35rem);
+  max-width: 600px; line-height: 1.6; color: rgba(209,217,230,0.8); margin-bottom: 2.5rem;
+}
+.hero-cta {
+  display: inline-block; background: var(--accent); color: #1a1f2e;
+  font-family: var(--font-display); font-weight: 600; font-size: 0.9rem;
+  letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  padding: 0.9rem 2.5rem; transition: opacity 0.2s;
+}
+.hero-cta:hover { opacity: 0.85; }
+.hero-bg-text {
+  position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(8rem, 22vw, 20rem);
+  line-height: 1; text-transform: uppercase; color: rgba(245,158,11,0.04);
+  pointer-events: none; user-select: none; white-space: nowrap;
+}
+
+/* STATS */
+#stats { padding: 5rem 5%; border-top: 1px solid rgba(209,217,230,0.1); }
+.section-label {
+  font-family: var(--font-display); font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 3rem;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(209,217,230,0.1); max-width: var(--max); }
+.stat-card { background: var(--bg); padding: 3rem 2rem; text-align: center; }
+.stat-number {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(209,217,230,0.6);
+}
+
+/* ABOUT DIVIDER */
+.brand-strip {
+  padding: 4rem 5%; background: rgba(245,158,11,0.05);
+  border-top: 1px solid rgba(245,158,11,0.15); border-bottom: 1px solid rgba(245,158,11,0.15);
+}
+.brand-strip-inner { max-width: var(--max); display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+.brand-position {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); white-space: nowrap;
+}
+.brand-desc {
+  font-family: var(--font-body); font-size: 1rem; line-height: 1.7;
+  color: rgba(209,217,230,0.75); max-width: 580px;
+}
+
+/* NIL / CONTACT */
+#nil { padding: 6rem 5%; }
+.nil-inner { max-width: 640px; }
+.section-title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem); text-transform: uppercase;
+  line-height: 1.05; color: var(--text); margin-bottom: 1rem;
+}
+.section-title span { color: var(--accent); }
+.nil-sub { font-size: 1rem; color: rgba(209,217,230,0.65); margin-bottom: 2.5rem; line-height: 1.6; }
+.form-group { margin-bottom: 1.25rem; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; background: rgba(209,217,230,0.05);
+  border: 1px solid rgba(209,217,230,0.2); color: var(--text);
+  font-family: var(--font-body); font-size: 0.95rem;
+  padding: 0.85rem 1rem; outline: none; transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 130px; }
+.form-group select option { background: #1a1f2e; }
+.form-submit {
+  background: var(--accent); color: #1a1f2e; border: none; cursor: pointer;
+  font-family: var(--font-display); font-weight: 600; font-size: 0.9rem;
+  letter-spacing: 0.15em; text-transform: uppercase; padding: 0.95rem 2.5rem;
+  transition: opacity 0.2s; width: 100%;
+}
+.form-submit:hover { opacity: 0.85; }
+
+/* FOOTER */
+footer {
+  padding: 2.5rem 5%; border-top: 1px solid rgba(209,217,230,0.1);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: gap;
+  gap: 1rem;
+}
+.footer-ig a {
+  color: var(--accent); text-decoration: none; font-family: var(--font-display);
+  font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; transition: opacity 0.2s;
+}
+.footer-ig a:hover { opacity: 0.7; }
+.footer-credit { font-size: 0.75rem; color: rgba(209,217,230,0.4); }
+.footer-credit a { color: rgba(209,217,230,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-credit a:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .brand-strip-inner { flex-direction: column; gap: 1rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">C. Dougherty</a>
+  <ul class="nav-links">
+    <li><a href="#stats">Stats</a></li>
+    <li><a href="#nil">Work With Me</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#stats" onclick="closeMobile()">Stats</a>
+  <a href="#nil" onclick="closeMobile()">Work With Me</a>
+</div>
+
+<section id="hero">
+  <div class="hero-bg-text">LB</div>
+  <p class="hero-tag">MTSU Football &nbsp;·&nbsp; Linebacker</p>
+  <h1 class="hero-name">
+    Connor
+    <span>Dougherty</span>
+  </h1>
+  <p class="hero-statement">
+    3 sacks. 7 tackles for loss. A relentless presence in the backfield built on instincts, film study, and an unmatched motor. Connor Dougherty doesn't wait for plays to come to him — he goes and gets them.
+  </p>
+  <a href="#nil" class="hero-cta">Connect With Connor</a>
+</section>
+
+<section id="stats">
+  <p class="section-label">2024 Season — By The Numbers</p>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Sacks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">7</div>
+      <div class="stat-label">Tackles for Loss</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">34</div>
+      <div class="stat-label">Total Tackles</div>
+    </div>
+  </div>
+</section>
+
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <div class="brand-position">Linebacker<br>MTSU</div>
+    <p class="brand-desc">
+      Playing at Middle Tennessee State University, Connor Dougherty has established himself as a consistent disruptor in the backfield. His ability to read the offense and arrive in the right place at the right moment makes him a threat on every single snap.
+    </p>
+  </div>
+</div>
+
+<section id="nil">
+  <div class="nil-inner">
+    <p class="section-label">NIL Partnerships</p>
+    <h2 class="section-title">Let's Build<br><span>Something.</span></h2>
+    <p class="nil-sub">
+      Connor is open to brand partnerships, appearances, and social media collaborations. If your brand values drive, authenticity, and competitive edge — let's talk.
+    </p>
+    <form name="nil-contact" method="POST" data-netlify="true" action="#nil">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="company" placeholder="Brand / Company">
+      </div>
+      <div class="form-group">
+        <select name="type">
+          <option value="" disabled selected>Partnership Type</option>
+          <option value="social">Social Media / Content</option>
+          <option value="appearance">Appearance / Event</option>
+          <option value="ambassador">Brand Ambassador</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Tell me about your brand and what you have in mind..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-ig">
+    <a href="https://instagram.com/Connord_" target="_blank" rel="noopener">@Connord_</a>
+  </div>
+  <div class="footer-credit">
+    Built by <a href="https://loganbrands.com" target="_blank" rel="noopener">Logan Brands</a>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+</script>
+</body>
+</html>
